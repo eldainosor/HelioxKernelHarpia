@@ -865,7 +865,7 @@ end:
 
 static int mdss_dsi_panel_on(struct mdss_panel_data *pdata)
 {
-	
+
 	struct mdss_dsi_ctrl_pdata *ctrl = NULL;
 	struct mdss_panel_info *pinfo;
 	u8 pwr_mode = 0;
@@ -928,11 +928,12 @@ end:
 		dropbox_count = 0;
 
 	pr_info("%s-. Pwr_mode(0x0A) = 0x%x\n", __func__, pwr_mode);
+
+
 #ifdef CONFIG_TOUCHSCREEN_DOUBLETAP2WAKE
-	if (prevent_sleep) {
 	dt2w_scr_suspended = false;
-	}
 #endif
+
 	return 0;
 }
 
@@ -964,6 +965,12 @@ static int mdss_dsi_panel_off(struct mdss_panel_data *pdata)
 		prevent_sleep = false;
 #endif	
 
+#ifdef CONFIG_TOUCHSCREEN_DOUBLETAP2WAKE
+	bool prevent_sleep = (dt2w_switch > 0);
+	if (prevent_sleep && in_phone_call)
+		prevent_sleep = false;
+#endif
+
 	if (pdata == NULL) {
 		pr_err("%s: Invalid input data\n", __func__);
 		return -EINVAL;
@@ -991,11 +998,11 @@ static int mdss_dsi_panel_off(struct mdss_panel_data *pdata)
 end:
 	pinfo->blank_state = MDSS_PANEL_BLANK_BLANK;
 	pr_info("%s-:\n", __func__);
+
 #ifdef CONFIG_TOUCHSCREEN_DOUBLETAP2WAKE
-	if (prevent_sleep) {
 	dt2w_scr_suspended = true;
-	}
 #endif
+
 	return 0;
 }
 
