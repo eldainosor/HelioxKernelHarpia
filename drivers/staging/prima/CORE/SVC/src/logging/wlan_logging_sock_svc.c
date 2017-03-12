@@ -801,8 +801,7 @@ static int wlan_logging_proc_sock_rx_msg(struct sk_buff *skb)
 	int type;
 
 	int ret, len;
-	unsigned long flags;
-
+	
         if (TRUE == vos_isUnloadInProgress())
         {
                 pr_info("%s: unload in progress\n",__func__);
