@@ -8,6 +8,7 @@ make mrproper
 make heliox_defconfig
 
 set -e
+rm Heliox-harpia-Release*
 rm -f arch/arm/boot/dts/*.dtb
 rm -f arch/arm/boot/dt.img
 rm -f cwm_flash_zip/boot.img
