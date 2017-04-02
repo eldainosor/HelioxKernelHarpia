@@ -3,11 +3,12 @@ export SUBARCH=arm
 export CROSS_COMPILE="gcc-linaro/bin/arm-linux-gnueabihf-"
 export KBUILD_BUILD_USER="Subhrajyoti"
 export KBUILD_BUILD_HOST="Beast"
-HELIOX_VERSION="Release-1"
+HELIOX_VERSION="Release-2"
 make mrproper
 make heliox_defconfig
 
 set -e
+rm Heliox-harpia-Release*
 rm -f arch/arm/boot/dts/*.dtb
 rm -f arch/arm/boot/dt.img
 rm -f cwm_flash_zip/boot.img
