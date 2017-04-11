@@ -9,8 +9,12 @@ ui_print(" |_|  |_|  \___| |_| |_|  \___/  /_/\_\  ");
 ui_print("### By Subhrajyoti Sen ###");
 ui_print(" ");
 
-assert(getprop("ro.product.device") == "harpia" ||
-       abort("This package is for device: harpia. this device is " +
+assert(getprop("ro.product.device") == "surnia" ||
+       getprop("ro.product.device") == "surnia_umts" ||
+       getprop("ro.product.device") == "surnia_uds" ||
+       getprop("ro.product.device") == "surnia_udstv" ||
+       getprop("ro.product.device") == "harpia" ||
+       abort("This package is for device: surnia,harpia; this device is " +
              getprop("ro.product.device") + "."););
 
 ui_print("Extracting flashing tools...");
