@@ -1,21 +1,22 @@
+git clone https://bitbucket.org/matthewdalex/arm-eabi-4.9 uber
 export ARCH=arm
 export SUBARCH=arm
-export CROSS_COMPILE="gcc-linaro/bin/arm-linux-gnueabihf-"
-export KBUILD_BUILD_USER="Subhrajyoti"
-export KBUILD_BUILD_HOST="Beast"
+export CROSS_COMPILE="uber/bin/arm-eabi-"
+export KBUILD_BUILD_USER="ElDainosor"
+export KBUILD_BUILD_HOST="DeletThis"
 HELIOX_VERSION="Release-2"
 make mrproper
 make heliox_defconfig
 
-set -e
-rm Heliox-harpia-Release*
-rm -f arch/arm/boot/dts/*.dtb
-rm -f arch/arm/boot/dt.img
-rm -f cwm_flash_zip/boot.img
+#set -e
+#rm Heliox-surnia-Release*
+#rm -f arch/arm/boot/dts/*.dtb
+#rm -f arch/arm/boot/dt.img
+#rm -f cwm_flash_zip/boot.img
 make -j4 zImage
 make -j4 dtimage
 make -j4 modules
-rm -rf heliox_install
+#rm -rf heliox_install
 mkdir -p heliox_install
 make -j4 modules_install INSTALL_MOD_PATH=heliox_install INSTALL_MOD_STRIP=1
 mkdir -p cwm_flash_zip/system/lib/modules/pronto
@@ -24,7 +25,9 @@ mv cwm_flash_zip/system/lib/modules/wlan.ko cwm_flash_zip/system/lib/modules/pro
 cp arch/arm/boot/zImage cwm_flash_zip/tools/
 cp arch/arm/boot/dt.img cwm_flash_zip/tools/
 cd cwm_flash_zip
-zip -r ../Heliox-harpia-$HELIOX_VERSION-$(date +"%Y%m%d")-$(date +"%H%M%S").zip ./
+zip -r ../Heliox-surnia-$HELIOX_VERSION-$(date +"%Y%m%d")-$(date +"%H%M%S").zip ./
+sleep 5
+rm -rf uber
 
 
 
