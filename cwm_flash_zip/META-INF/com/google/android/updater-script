@@ -7,6 +7,8 @@ ui_print(" |_|  |_|  \___| |_| |_|  \___/  /_/\_\  ");
                                        
                                        
 ui_print("### By Subhrajyoti Sen ###");
+ui_print("### adapted for surnia ###");
+ui_print("### by ElDainosor      ###");
 ui_print(" ");
 
 assert(getprop("ro.product.device") == "surnia" ||
@@ -34,6 +36,11 @@ delete("/tmp/mkbootimg");
 delete("/tmp/unpackbootimg");
 delete("/tmp/flash_kernel.sh");
 set_progress(0.7);
+ui_print("Thanks to:");
+ui_print("- Subhrajyoti Sen");
+ui_print("- facuarmo");
+ui_print("- srfarias");
+ui_print("- cuspidroid legacy");
 
 ui_print("Installing kernel modules...");
 mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system");
@@ -43,5 +50,7 @@ symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.k
 unmount("/system");
 set_progress(0.9);
 
-ui_print("Kernel installation completed!");
+ui_print("Kernel installation completed! So, go and");
+ui_print("check out the new bugs that may burn your");
+ui_print("device :D");
 set_progress(1.0);
