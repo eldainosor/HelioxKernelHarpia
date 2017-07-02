@@ -4,12 +4,15 @@ ui_print(" | |__| |   ___  | |  _    ___   __  __  ");
 ui_print(" |  __  |  / _ \ | | | |  / _ \  \ \/ /  ");
 ui_print(" | |  | | |  __/ | | | | | (_) |  >  <   ");
 ui_print(" |_|  |_|  \___| |_| |_|  \___/  /_/\_\  ");
-                                       
-                                       
+ui_print(" ");                                 
+ui_print(" ");                                      
 ui_print("### By Subhrajyoti Sen ###");
 ui_print("### adapted for surnia ###");
 ui_print("### by ElDainosor      ###");
 ui_print(" ");
+ui_print("### Subrelease named: ###");
+ui_print("### ... of your fake  ###");
+ui_print("### dimension.        ###");
 
 assert(getprop("ro.product.device") == "surnia" ||
        getprop("ro.product.device") == "surnia_umts" ||
