@@ -48,7 +48,7 @@ ui_print("##      Thanks to:      ##");
 ui_print("##                      ##");
 ui_print("##  - Subhrajyoti Sen   ##");
 ui_print("##      - facuarmo      ##");
-ui_print("##      - srfarias"     ##");
+ui_print("##      - srfarias      ##");
 ui_print("##  - cuspidroid legacy ##");
 ui_print("##########################"); 
 ui_print("                          ");
