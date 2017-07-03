@@ -4,7 +4,7 @@ export SUBARCH=arm
 export CROSS_COMPILE="uber/bin/arm-eabi-"
 export KBUILD_BUILD_USER="ElDainosor"
 export KBUILD_BUILD_HOST="DeletThis"
-HELIOX_VERSION="R2_FakeDimension"
+HELIOX_VERSION="R2-ElectricDreams"
 make mrproper
 make heliox_defconfig
 
