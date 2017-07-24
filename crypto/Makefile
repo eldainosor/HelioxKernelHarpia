@@ -2,8 +2,6 @@
 # Cryptographic API
 #
 
-<<<<<<< HEAD
-=======
 #Keep this on the top
 obj-$(CONFIG_CRYPTO_FIPS) += first_file.o
 obj-$(CONFIG_CRYPTO_FIPS) += fips_integrity.o
@@ -13,7 +11,6 @@ obj-$(CONFIG_CRYPTO_FIPS) += fips_integrity.o
 CFLAGS_REMOVE_memneq.o := -O1 -O2 -O3
 CFLAGS_memneq.o := -Os
 
->>>>>>> a37031a... Linux 3.10.106
 obj-$(CONFIG_CRYPTO) += crypto.o
 crypto-y := api.o cipher.o compress.o memneq.o
 
