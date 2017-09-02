@@ -13,12 +13,9 @@ make surnia_defconfig
 #rm -f arch/arm/boot/dts/*.dtb
 #rm -f arch/arm/boot/dt.img
 #rm -f cwm_flash_zip/boot.img
-make -j4 zImage
-make -j4 dtimage
-make -j4 modules
 #rm -rf heliox_install
 mkdir -p surnia_install
-make -j8 modules_install INSTALL_MOD_PATH=surnia_install INSTALL_MOD_STRIP=1
+make -j8 CROSS_COMPILE='uber/bin/arm-eabi-' ARCH='arm' all
 mkdir -p cwm_flash_zip/system/lib/modules/pronto
 find surnia_install/ -name '*.ko' -type f -exec cp '{}' cwm_flash_zip/system/lib/modules/ \;
 mv cwm_flash_zip/system/lib/modules/wlan.ko cwm_flash_zip/system/lib/modules/pronto/pronto_wlan.ko
