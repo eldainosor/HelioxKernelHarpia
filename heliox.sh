@@ -4,9 +4,9 @@ export SUBARCH=arm
 export CROSS_COMPILE="uber/bin/arm-eabi-"
 export KBUILD_BUILD_USER="ElDainosor"
 export KBUILD_BUILD_HOST="DeletThis"
-HELIOX_VERSION="R2-ElectricDreams"
+HELIOX_VERSION="testingOreoles"
 make mrproper
-make heliox_defconfig
+make surnia_defconfig
 
 #set -e
 #rm Heliox-surnia-Release*
@@ -17,15 +17,15 @@ make -j4 zImage
 make -j4 dtimage
 make -j4 modules
 #rm -rf heliox_install
-mkdir -p heliox_install
-make -j4 modules_install INSTALL_MOD_PATH=heliox_install INSTALL_MOD_STRIP=1
+mkdir -p surnia_install
+make -j8 modules_install INSTALL_MOD_PATH=surnia_install INSTALL_MOD_STRIP=1
 mkdir -p cwm_flash_zip/system/lib/modules/pronto
-find heliox_install/ -name '*.ko' -type f -exec cp '{}' cwm_flash_zip/system/lib/modules/ \;
+find surnia_install/ -name '*.ko' -type f -exec cp '{}' cwm_flash_zip/system/lib/modules/ \;
 mv cwm_flash_zip/system/lib/modules/wlan.ko cwm_flash_zip/system/lib/modules/pronto/pronto_wlan.ko
 cp arch/arm/boot/zImage cwm_flash_zip/tools/
 cp arch/arm/boot/dt.img cwm_flash_zip/tools/
 cd cwm_flash_zip
-zip -r ../Heliox-surnia-$HELIOX_VERSION-$(date +"%Y%m%d")-$(date +"%H%M%S").zip ./
+zip -r ../dfkernel-surnia-$HELIOX_VERSION-$(date +"%Y%m%d")-$(date +"%H%M%S").zip ./
 sleep 5
 rm -rf uber
 
