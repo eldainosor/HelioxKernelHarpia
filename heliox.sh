@@ -1,10 +1,10 @@
-git clone https://bitbucket.org/matthewdalex/arm-eabi-4.9 uber
+git clone https://bitbucket.org/UBERTC/arm-eabi-4.9 uber
 export ARCH=arm
 export SUBARCH=arm
 export CROSS_COMPILE="uber/bin/arm-eabi-"
 export KBUILD_BUILD_USER="ElDainosor"
 export KBUILD_BUILD_HOST="DeletThis"
-HELIOX_VERSION="R2-ElectricDreams"
+HELIOX_VERSION="R2-Frumoasa"
 make mrproper
 make heliox_defconfig
 

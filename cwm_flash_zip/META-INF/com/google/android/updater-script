@@ -13,7 +13,8 @@ ui_print("##  adapted for surnia  ##");
 ui_print("##  by ElDainosor       ##");
 ui_print("##----------------------##");
 ui_print("##  Subrelease named:   ##");
-ui_print("##  electric dreams     ##");
+ui_print("##       frumoasa       ##");
+ui_print("##  (oreo test build)   ##");
 ui_print("##########################"); 
 ui_print("                          ");
 
